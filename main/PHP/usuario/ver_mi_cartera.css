@@ -1,0 +1,116 @@
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    margin: 0px;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+h5{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+main .grid_denuevo{ /*esto está hecho a proposito, y aquí no he puesto main form a proposito... no le des más vueltas*/
+    display: grid; /*este grid es entre la parte de meter pasta y donde sale el saldo*/
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+main button{
+    border: none;
+    border-radius: 5px;
+    padding: 7px 17px;
+    margin-left: 20px;
+    right: 0px;
+    font-size: 18px;
+    color: rgb(183, 240, 151);
+    background-color: rgb(0,69,8);
+    background: linear-gradient(0deg, rgba(0,69,8,1) 0%, rgba(9,110,34,1) 38%, rgba(1,198,23,1) 100%);}
+main button:hover{
+    border: none;
+    font-size: 18px;
+    color: rgb(221, 245, 207);
+    background-color: rgb(0,69,8);
+    background: linear-gradient(0deg, rgba(0,69,8,1) 0%, rgba(9,121,36,1) 38%, rgba(0,255,28,1) 100%);
+}
+main .contenedor_fondos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgb(54,54,54);
+    background: linear-gradient(90deg, rgba(54,54,54,1) 0%, rgba(101,101,101,1) 38%, rgba(149,161,150,1) 100%);
+}
+main .contenedor_fondos .mini_contenedor_negro{
+    color: white;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 18px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    background-color: black;
+    width: 220px;
+    display: flex; /*PA QUE FUNCIONE LO DE ABAJO*/
+    justify-content: flex-end; /*OBLIGATORIO, SIN ESTO EL BOTON VERDE TIENE UN ESPACIO A LA DERECHA DIFERENTE AL RESTO, DEBIDO A QUE LOS PRECIOS TIENEN MAS CARACTERES Y OCUPAN MÁS*/
+    align-items: center; /*OBLIGATORIOOOO, SIN ESTO, LOS PRECIOS ESTÁN ARRIBA DEL TODO DE LA PARTE NEGRA*/
+}
+.display_flex_derecha { /*OBLIGATORIO PARA QUE LA PARTE NEGRA, SE VAYA A LA DERECHA DEL TODO, RECORDEMOS QUE ES UN GRID...*/
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+/*============================ parte derecha, la de tu saldo actual =====================================*/
+
+section{
+    background-color: #363636 ;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(250, 254, 230);
+    max-height: 100px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+
+}
+section p {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+
+}
+
+
+/* ============================================= mediaquery 804 px =====================================*/
+
+@media (max-width: 804px) {
+    main .grid_denuevo {  
+        grid-template-columns: 1fr;
+        gap: 2em;
+        transition: .3s ease all;
+ 
+    }
+    
+}
+@media (max-width: 636px) {
+    main .contenedor_fondos{
+        grid-template-columns: 1fr;
+        gap: 20px; 
+        transition: .3s ease all;
+
+    }
+    
+}

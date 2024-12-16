@@ -1,0 +1,35 @@
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    margin: 0px;
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.subtitulo_subrayado{
+   	text-decoration: underline;
+    font-weight: bold;
+}
+.grid_2{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.grid_parte_derecha_todo_derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 1102px) {
+	.grid_2 {
+		grid-template-columns: 1fr;
+        margin-bottom: 25px;
+	}
+    .grid_parte_derecha_todo_derecha{
+        display:block;
+        justify-content:start;
+    }
+}

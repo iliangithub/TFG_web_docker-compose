@@ -1,0 +1,220 @@
+/* Esta primera parte será para cuando accedes del tiron a la página*/
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    margin: 0px;
+}
+
+
+
+.titulo_bienvenido{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.titulo_pequeno_subrayado{    
+    font-weight: bold;
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+}
+
+
+/*============================== datos personales =============================*/
+
+.grid_datos_personales{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 100px;
+}
+
+
+/*============================================================================*/
+
+
+
+/*botones de nombre y apellidos*/
+
+/*este es un div que engloba a los 3 input*/
+.contenedor_nombre_apellidos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+   
+}
+    /* Estilos para los inputs dentro de los divs */
+    .contenedor_nombre_apellidos input {
+        font-size: 16px;
+        background: #eee;
+        border: 3px solid transparent;
+        border-radius: 3px;
+        height: 45px;
+        line-height: 45px;
+        padding: 0 40px 0 10px;
+        transition: .3s ease all;
+    }
+    
+    .contenedor_nombre_apellidos input:focus {
+        border: 3px solid #0075FF;
+        outline: none;
+        box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+    }
+
+    @media (max-width: 975px) {
+        .contenedor_nombre_apellidos {
+            grid-template-columns: 1fr;
+            gap: 2em; 
+        }
+        /* Cuando la pagina se haga 890px estrecha, los div, ocuparán cada uno, una fraccion entera
+        y el gap, lo he reducido pues deja un gap vertical tambien*/
+        .contenedor_nombre_apellidos input{
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* ======================================================================================================*/
+
+.contenedor_solo_para_hacer_grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor_solo_para_hacer_grid label {
+    margin-bottom: 5px;
+}
+/*class de dentro del input, no un div externo que hace que esos input de ese div sean de esta forma*/
+.input_formulario{
+    width: 100%;
+    font-size: 16px;
+    background: #eee;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.input_formulario:focus {
+    border-radius: 3px;
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+/*======== ========== ========== ========== ========== ========== ========== ========== ==========*/
+
+
+/*======== ========== ========== ESTO NO APARECE EN NINGUN INPUT NI EN EL HTML ======== ========== ==========*/
+/*ESTO LUEGO LO REEMPLAZA EL JAVASCRIPT POR LA CLASS ANTERIOR QUE ES LA DE .input_formulario Y LA SUSTITUYE POR ESTA*/
+.input_formulario_cuando_de_error {
+    border: 3px solid #bb2929;
+}
+
+.input_formulario_cuando_coinciden {
+    border: 3px solid #23ed34; 
+}
+
+.formulario_mensaje_error_del_input_desactivado {/*este es el que sale en el html*/
+    display: none;
+    color: #bb2929;
+}
+
+.formulario_mensaje_error_del_input_activado {
+    display: block;
+    color: #bb2929;
+    font-weight: bold;
+}
+/*======== ========== ========== ========== ========== ========== ========== ========== ==========*/
+/* telefono y dirección*/
+.contenedor_telefono_direccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+   
+}
+/*este es un segundo grid, que va dentro de la primera columna del primer grid
+contiene el select y el telefono*/
+.grid_de_nuevo{
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    gap: 20px;
+}
+
+
+.select_css{
+    font-size: 16px;
+    background: #eee;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 10px;
+    transition: .3s ease all;
+}
+.select_css:focus{
+    border-radius: 3px;
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+@media (max-width: 910px) {
+	.contenedor_telefono_direccion {
+		grid-template-columns: 1fr;
+	}
+}
+/* ====================   ===================   ===================   ===================   ===================*/
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    .contenedor_solo_para_hacer_grid {
+        grid-template-columns: 1fr;
+        gap: 2em; 
+    }
+    /* Cuando la pagina se haga 890px estrecha, los div, ocuparán cada uno, una fraccion entera
+    y el gap, lo he reducido pues deja un gap vertical tambien*/
+    .contenedor_solo_para_hacer_grid input{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ========borrar cuenta========= */
+.div_borrar_cuenta_grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
+.input_borrar_contrasena {
+    margin-left: 30px;
+    font-size: 16px;
+    background: #eee;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.input_borrar_contrasena:focus {
+    border-radius: 3px;
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+.seccion_borrar_cuenta{
+    margin-top: 200px;
+}

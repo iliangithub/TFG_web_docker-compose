@@ -1,0 +1,157 @@
+body {
+  margin:0;
+  font-family: Helvetica;
+  font-weight: none;
+  color: white;
+}
+
+
+/*=============== ESTO PERTENECE LA PARTE DE LA IMAGEN ====================*/
+main{
+	background-image: url("../../IMAGENES/tradingavanzado.jpg");
+	padding-bottom: 200px;	
+}
+.texto_medio {
+	text-shadow: 0.1em 0.1em 0.2em black;
+	padding-top: 300px;
+	font-family: Helvetica;
+	z-index: 2;
+	max-width: 800px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 30px;
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+}
+/* =============================== parte negra =============================*/
+section {
+	padding-top: 100px;
+	background-color: black;
+	padding-bottom: 100px;	
+	
+}
+.centrar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+section h1 {
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 40px;
+}
+
+.grid_parte_negra{
+	max-width: 1000px;
+	display: grid;	
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	transition: .3s ease all;
+}
+section p{
+	font-size: 20px;
+}
+/*================================ parte naranja =============================*/
+aside {
+	padding-top: 20px;
+	padding-bottom: 50px;
+	background-color: #DC7633;
+}
+aside h1{
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 40px;
+}
+aside ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+aside ul li{
+	padding-bottom: 10px;
+	font-size: 20px;
+}
+.grid_parte_naranja {
+	display: grid;	
+	grid-template-columns: 1fr 1fr;
+	gap: 200px;
+	transition: .3s ease all;
+}
+/*================================ parte negra 2 =============================*/
+
+section img{
+	border-radius: 10px;
+	width:550px;
+	height: 330px;
+}
+
+/*================================= parte naranja 2 ============================*/
+
+footer {
+	background-color: #DC7633;
+	padding-bottom: 100px;	
+	padding-top: 100px;	
+}
+
+footer ul{
+	list-style: none;
+	background-color: #242c82;
+	margin: 0px;
+	padding: 20px 30px 30px 30px;
+	border-radius: 20px;
+}
+footer ul li{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 20px;
+	border-bottom: solid 3px #DC7633;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
+	width: 200px;
+	background-color: #242c82;
+	border-radius: 50px;
+	padding: 20px;
+	font-size: 30px;
+}
+footer a:hover{
+	text-decoration: none;
+	color: red;
+	background-color: #333a81;
+}
+.centrar_enlace_comprar{
+	text-align: center;
+	margin-top: 90px;
+}
+footer h1{
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 40px;
+}
+/*=============================== media query ============================*/
+@media (max-width: 1020px) {
+
+	.grid_parte_negra {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 80px; 
+		max-width: 500px;
+		text-align: justify;
+	}
+	section img{
+		max-width: 100%;
+		height: auto; /* OBLIGATORIO, si queremos que la pagina al reducirse se reduzca y la imagen se verá mas estrecha pero de altura seguirá igual
+		por esto, es necesario que la altura tambien se estreche porporcionalmente...*/
+		display: block;
+ 	}
+	.grid_parte_naranja{
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 80px; 
+		max-width: 250px;
+		margin: auto;
+	}
+}

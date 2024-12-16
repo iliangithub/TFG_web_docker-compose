@@ -1,0 +1,201 @@
+body {
+    background-color: #c9d6ff;
+    font-family: Helvetica;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    margin: 0px;
+    
+}
+main {
+  max-width: 1040px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  background-color: white;
+  padding: 80px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+main h2 { /*el h2 es el subtitulo de cuando NO HAS rellenado NADA*/
+  margin: 0px;
+  margin-bottom: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: 2px underline red;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+main h3 { /*el h3 es el subtitulo de cuando has rellenado todos los datos*/
+  margin: 0px;
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: 1px underline black;
+  font-weight: normal;
+}
+main section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-bottom: 20px;
+  transition: 2s ease all;
+
+}
+main section .tipo_dato_subrayado{
+  font-weight: bold;
+  text-decoration: 1.5px underline black;
+
+}
+main section .texto_input{
+  font-size: 16px;
+  background: #eee;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: .3s ease all;
+}
+main section .texto_input:focus {
+  border: 3px solid #0075FF;
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+
+  /* ESTE CLASS APARECE SOLAMENTE DENTRO DE UN DIV CUANDO APARECE UN INPUT, PUES EL INPUT ES GORDO TIENE ALTURA
+  Y COMO TIENE ALTURA EL TEXTO SE QUEDA COMO CON UN MARGIN BOTTON Y ESTÁ VOLANDO Y SE SITUA ARRIBA A LA IZQUIERDA
+  Y COMO EL INPUT TIENE COMO 45PX DE ALTURA PUES EL TEXTO ESTÁ A 45 DE ALTURA, PERO CON ESTO NO, ESTÁ CENTRADO VERTICALMENTE*/
+  .centrar_verticalmente_texto{
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      text-decoration: 1.5px underline black;
+  }
+/*========================================== boton enviar =================================== */
+
+/*Centrar boton enviar*/
+.flexbox_centrar_boton{
+  display: flex;
+  justify-content: center;
+}
+.flexbox_centrar_boton input{
+  background-color: #512da8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+/*he añadido text decoration porque tambien hay enlaces, como por ejemplo en la pagina de contacto, cuando no inicias sesión*/
+.flexbox_centrar_boton input:hover{
+  background-color: #5d3bac;
+  color: #dadada;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+
+/* ========================================== media query ================================================== */
+
+@media (max-width: 850px) {
+	main section {
+		grid-template-columns: 1fr;
+        gap:10px;
+        padding-bottom: 10px;
+        transition: 2s ease all;
+        
+	}
+    main section .texto_input{
+		width: 100%;
+	}
+    
+}
+
+
+
+
+
+/* =================================== la parte de compra de verdad =======================================*/
+
+.cursos{
+  background-color: PapayaWhip;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  max-width: 650px;;
+ 
+}
+.div_grid_texto_y_imagen{
+  margin-top: 60px;
+  font-size: 17px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap:50px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+.imagen{
+ border: solid 20px PapayaWhip;
+}
+.profesor_nombre{
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* Cuando has iniciado sesion */
+.titulo_cursos{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.agradecimiento_centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.agradecimiento_centrar img{
+  margin-top: 50px;
+  width: 200px;
+  height: 340px;
+}
+@media (max-width: 1000px) {
+  .div_grid_texto_y_imagen {
+    grid-template-columns: 1fr; /* Cambiamos a una sola columna */
+    gap: 20px; /* Reducimos el espacio entre elementos */
+    text-align: center; /* Alineamos el texto a la izquierda */
+  }
+
+  .div_grid_texto_y_imagen .imagen {
+    margin-top: 20px; /* Espacio entre el texto y la imagen */
+    order: 1; /* Cambiamos el orden para que la imagen esté debajo del texto */
+    border-width: 10px; /* Reducimos el grosor del borde de la imagen */
+  }
+
+  .profesor_nombre {
+    text-align: left; /* Alineamos el nombre del profesor a la izquierda */
+    margin-top: 20px; /* Espacio entre el texto y el nombre del profesor */
+  }
+
+  .solo_para_mediaquery_centrar{
+    display: flex;
+    justify-content: center;
+  }
+  .solo_mediaquery_justificar{
+    text-align: justify; /* Alineamos el texto a la izquierda */
+
+  }
+}

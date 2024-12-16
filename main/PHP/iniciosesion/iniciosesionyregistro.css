@@ -1,0 +1,344 @@
+
+body{
+    background-color: #c9d6ff;
+    background-size: cover;
+    margin: 0px;
+    
+}
+/*a la hora de registrarte, te inicia sesion automáticamente, y hay un mensaje que te muestra
+que has podido registrarte y que además, te está iniciando sesión
+
+este codigo es para ese mensaje exclusivamente, de que has podido registrarte*/
+
+
+    .mensaje_creacion_con_exito{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+/*SOLO EL MENSAJE A MOSTRAR AL INICIAR SESION Y LUEGO REDIRIGE*/
+    .mensaje_al_inciar_sesion{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+/*=====================================================================*/
+/*main es la etiqueta que utilizo para centrar vertical y horizontalmente el contenedor blanco, y NO, NO LO PUEDO PONER ESO DIRECTAMENTE EN EL CONTENEDOR BLANCO*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* La altura de la vista completa */
+}
+/*este lo hago para que no choque con el menu de navegación, cuando la pantalla esté a 804px */
+@media (max-width: 804px) {
+    .contenedor_blanco {
+      margin-top: 50px;
+    }
+}
+
+.background-video-iniciosesion{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+}
+
+.contenedor_blanco{ 
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+ 
+
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    height: 480px;
+}
+
+/* esto afecta a todos los <p> que hay dentro de el contenedor blanco*/
+/*  LOS UNICOS <p> que hay son:
+Regístrate para tener acceso a todos los cursos
+Introduce tus datos personales requeridos
+corresponde a la parte azul
+*/
+.contenedor_blanco p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;   
+    
+}
+
+.contenedor_blanco span{
+    font-size: 12px;
+}
+
+.contenedor_blanco a{
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+.contenedor_blanco a:hover{
+    color: red;
+    font-weight: bold;
+
+}
+
+.contenedor_blanco button{
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.contenedor_blanco button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+/*con esto, se centra el inicia sesion*/
+.contenedor_blanco form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.contenedor_blanco.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.contenedor_blanco.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons{
+    margin: 20px 0;
+}
+
+.social-icons a{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 6;
+}
+/*antes el z-index estaba a 1000 por la cara, lo he puesto a 6, porque he visto
+que la intencion es que este tenga el máximo valor, y he revisado el resto de 
+z-index en todo el documento y el numero que superaba el resto es 6
+
+esto es importante, porque estamos hablando de capas y la pantalla azul se anteponia al desplegable
+del menu de navegacion negro de arriba*/
+
+.contenedor_blanco.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.parte_azul{
+    background-color: #512da8;
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.contenedor_blanco.active .parte_azul{
+    transform: translateX(50%);
+}
+
+/*para editar lo azul*/
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.contenedor_blanco.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.contenedor_blanco.active .toggle-right{
+    transform: translateX(200%);
+}
+.codigos_error{
+    position: absolute;
+    text-align: center;
+    top:10%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    color: tomato;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Helvetica"
+}
+
+
+
+.mensaje_error_input_desactivado{
+    font-size: 12px;
+    color:#bb2929;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+.mensaje_error_input_activado{
+    display: block;
+    text-align: center;
+}
+.borde_rojo_input_error_contrasena{
+    border: 3px solid #bb2929;
+}
+.contenedor_blanco_input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+
+
+
+/*======== icono ojo ========*/
+
+.ojo_iniciosesion{
+    width: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    right: 10px; /* Ajusta la posición desde la derecha */
+    transform: translateY(-50%); /* Centra verticalmente */
+    
+}
+.ojo_iniciosesion2{
+    width: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    right: 10px; /* Ajusta la posición desde la derecha */
+    transform: translateY(-50%); /* Centra verticalmente */
+}
+
+.posicion_relativa_ojo_dentro{
+    position: relative;
+    width: 100%;
+
+}
+
+.posicion_relativa_ojo_dentro2{
+    position: relative;
+    width: 100%;
+
+}

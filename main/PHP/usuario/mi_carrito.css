@@ -1,0 +1,125 @@
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+	margin: 0px;
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.boton_eliminar {
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
+	border: none;
+	outline: none;
+	font-weight: bold;
+
+}
+.boton_eliminar:hover {
+	color: black;
+	background-color: transparent;
+	text-decoration: underline;
+	border: none;
+	outline: none;
+
+}
+.div_cursos {
+	display: grid;
+	grid-template-columns: 1fr ;
+}
+.subtitulo_subrayado{
+	font-weight: bold;
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+}
+
+.sin_espacio{
+    margin-top: 0px;
+    top: 0px
+}
+section {
+	padding-top: 20px;
+	border-radius: 5px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	background: rgb(95,106,159);
+	background: radial-gradient(circle, rgba(95,106,159,1) 0%, rgba(68,68,68,1) 100%);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+section .precio {
+	font-size: 30px;
+}
+section h3{
+	color:white;
+	margin: 0px;
+}
+section h3 p{
+	padding-bottom: 10px;
+	margin: 0px;
+}
+section h3 .sin_descuento{
+	font-size: 14px;
+}
+section .div_descuentos h1{
+	text-align: center;
+	margin: 0px;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
+section .div_descuentos h2{
+	margin: 0px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+}
+section .div_descuentos h3{
+	margin: 0px;
+	margin-top: 15px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	font-weight: normal;
+}
+section .div_descuentos ul{
+	list-style: none;
+	font-size: 28px;
+	font-weight: bold;
+	color: #c9d6ff;
+
+}
+
+
+section .div_descuentos ul .no_descuento{
+	font-size: 18px;
+	color: rgb(222, 139, 141);
+}
+
+section .div_descuentos ul .total_con_descuento{
+	font-size: 18px;
+}
+
+.color_rojo {
+	color: rgb(249, 122, 100);
+	font-size: 20px;
+
+}
+.color_verde{
+	color: greenyellow;
+	font-size: 20px;
+
+}
+
+
+
+/* ============================= media query =================================*/
+
+@media (max-width: 1115px) {
+	section {
+		grid-template-columns: 1fr;
+	}
+}

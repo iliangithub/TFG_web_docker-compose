@@ -1,0 +1,39 @@
+version: '3.8' # esto especifica la versión que de Docker Compose
+
+services:
+  web: # ================= el apache ===================
+    build: # build va a indicar como onstruir la imagen 
+      context: .
+      dockerfile: Dockerfile # el archivo en cuestión...
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    depends_on: # basicamente, se va a asegurar de que `db` esté corriendo antes de iniciar el web
+      - db
+    networks:
+      - red_bridge_un_nombre_random #abajo del todo creo esta red, que es de tipo bridge
+
+  db: # ================== la bd =================
+    image: mariadb:latest #aqui no construimos la imagen, solo la descargamos
+    environment: #variables de entorno para la configuración inicial de MariaDB
+      MYSQL_ROOT_PASSWORD: root_password #establece la contraseña del usuario root de MariaDB
+      MYSQL_DATABASE: tfg_ilian_docker_compose # crea una base de datos llamada sesiones al iniciar
+      MYSQL_USER: usuario # y crea ese usuario pues porque a mi me hace falta iniciar sesión con un usuario normal y no con root
+      MYSQL_PASSWORD: a
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - ./BD/BD_TFG_DOCKER_vFINAL_8-24-2024.sql:/docker-entrypoint-initdb.d/BD_TFG_DOCKER_vFINAL_8-24-2024.sql #basicamente voy a acceder a la carpeta BD y pillar ese archivo y colocarlo en el que corresponde de mariaDB
+    ports:
+      - "3306:3306"
+    networks:
+      - red_bridge_un_nombre_random #abajo del todo creo esta red, que es de tipo bridge
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  red_bridge_un_nombre_random:
+    driver: bridge
