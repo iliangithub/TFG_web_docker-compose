@@ -1,0 +1,25 @@
+body{
+  background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    margin: 0px;
+}
+.contenedor_blanco_centrado_sin_inicio{
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  top:80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; 
+}
+
+.contenedor_texto_sin_inicio{ 
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  padding:80px;
+
+}

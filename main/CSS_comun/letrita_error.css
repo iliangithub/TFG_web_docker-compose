@@ -1,0 +1,17 @@
+/* EN CASO DE QUE QUIERA MOSTRAR
+UN MENSAJITO DE ERROR, DEL INICIO DE SESION, REGISTRO O DE QUE TENGO QUE MANDAR
+TODOS LOS DATOS Y RELLENAR TODOS LOS CAMPOS
+
+PUES AQUI ESTÁ EL CSS PARA LA LETRITA QUE ESTÉ CENTRADA, EN ROJITO Y BOLD
+*/
+
+.codigo_de_error{
+    color:red;
+    font-weight: bold;
+    text-align: center;
+}
+.codigo_aceptado{
+    color: rgb(39, 217, 39);
+    font-weight: bold;
+    text-align: center;
+}

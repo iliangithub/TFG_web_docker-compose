@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+header{
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 4px 16px hsla(210, 33%, 2%, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px; /*hace que todo el nav tenga ese grosor, pero las letras van para abajo y deja como un efecto de padding-bottom*/
+    font-family: 'Montserrat';
+    z-index: 9; /*obligatorio*/
+}
+nav ul{
+    margin: 0; /*ESTO NO PUEDE IR EN body, NI EN li */
+    padding: 0; /*y tienes que tener si o si los dos, por defecto, a la izquierda del todo deja un espacio, se soluciona de esta forma*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+nav ul li{
+    list-style: none; /*esto es para la lista, no para los enlaces*/
+    display: inline-block; /*esto NO puede ir en nav*/
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===================LOS SUBMENU=========================*/
+nav ul ul {
+    display: none; /* Oculta el submenú por defecto */
+    background-color: black;
+    margin: 0; /*ESTO NO PUEDE IR EN body, NI EN li */
+    padding: 0; /*y tienes que tener si o si los dos, por defecto, a la izquierda del todo deja un espacio, se soluciona de esta forma*/
+    width: 155px; 
+    padding-left: 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+nav ul li:hover > ul{
+    display: block; /*esto es para que APAREZCA SOLO CUANDO LE HACES HOVER*/
+    position: absolute;
+    
+}
+nav ul ul li{
+    display: block; /*esto es para que estén VERTICALES*/
+    height: 40px; /* para darle un grosor a la sublista y funcioanrá como un padding bottom*/
+    margin-top: 20px; /*con esto lo reposicionamos*/
+    text-align: left; /* Antes le puse text-align center a los li del primer menu... nav ul li y ahora neecesito desahacer eso pero para los nav ul ul li*/
+   
+}
+
+/*====================todo lo de arriba está correcto, actualizado 26-05-2024=========================*/
+
+.boton_hamburguesa_class {
+    display: none;
+}
+.boton_cerrar_class {
+  display: none; /* Oculta el botón X inicialmente */
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 804px) {
+    header {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 4px 16px hsla(210, 33%, 2%, 0.3);
+        position: fixed;
+    }
+
+    nav ul {
+        width: 100%;
+        padding-bottom: 20px;
+        display: block;
+        
+    }
+
+    nav ul li {
+        text-align: left;
+        display: block;
+        width: 100%;
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+    }
+
+    nav ul li a:hover {
+        color:red; /*para que se quede como deberia de estar*/
+    }
+
+    nav ul ul {
+        display: none;
+        background-color: black;
+        width: 100%;
+        position: relative;
+        margin-left: 0px;
+    }
+
+    nav ul ul li {
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        padding-bottom: 0px; /*hecho a proposito no tocar*/
+    }
+
+    nav ul li:hover > ul {
+        display: block;
+        position: relative;
+    }
+
+    .boton_hamburguesa_class {
+        display: block;
+        background-color: black;
+        width: 100%;
+        text-align: left;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    button:hover {
+        color:red;
+        font-weight: bold;
+    }
+    .boton_hamburguesa_class_desactivado {
+        display: none;
+        background-color: black;
+        width: 100%;
+        text-align: left;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .boton_cerrar_class {
+        display:none;
+        background-color: black;
+        width: 100%;
+        text-align: left;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .boton_cerrar_class_activado{
+        display: block;
+        background-color: black;
+        width: 100%;
+        text-align: left;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===========================EL SCROLL de todas las páginas======================*/
+  body::-webkit-scrollbar{
+    width: 10px;
+    background-clip: content-box;
+    
+}
+::-webkit-scrollbar-track {
+    background-color: black;
+    padding: 2px; /* Padding del fondo */
+  }
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px; /* Radio de borde del scrollbar */
+    border: 2px solid black; /* Borde del scrollbar SUBIENDO EL VALOR A ESTO, LO HACEMOS MÁS FINITO*/
+    
+    
+  }
+/*YA NO HAY NADA MAS DEL SCROLL*/

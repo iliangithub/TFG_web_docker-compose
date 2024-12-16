@@ -1,0 +1,47 @@
+/* 02 / 04 / 2024 
+me he dado cuenta de que hay tanto formulario con tanto boton de enviar
+que renta más en vez de poner tantas veces e código de que los botoness
+tienen que ser azules etc... ponerlo aquí en un documento
+
+y reciclar, y simplemente añadir en el head de html que los botones de enviar
+van a ser del css este.
+
+además, me he dado cuenta de que hay que estandarizar los botones en la pagina
+no que en comprar cursos sea tenga un border radius y en otra pagina otro...*/
+
+.boton_submit{
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*he añadido text decoration porque tambien hay enlaces, como por ejemplo en la pagina de contacto, cuando no inicias sesión*/
+.boton_submit:hover{
+    background-color: #5d3bac;
+    color: #dadada;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.div_centrar_submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
